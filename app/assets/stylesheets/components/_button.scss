@@ -1,0 +1,30 @@
+.btn-flat-yellow {
+  color: black;
+  padding: 8px 24px;
+  border-radius: 10px;
+  background: #ECBB64;
+  transition: background 0.3s ease;
+}
+
+.btn-flat-yellow:hover {
+  background: #e5c793;
+  color: black;
+}
+
+.btn-flat-purple {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 10px;
+  background: #403E96;
+  transition: background 0.3s ease;
+}
+
+.btn-flat-purple:hover {
+  background: #6b6a99;
+  color: white;
+}
+
+// corresponding html below
+// html : <a class="btn btn-flat" href="#">Book now</a>
+// erb : <%= link_to "Book now", "#", class: "btn btn-flat" %>
+
