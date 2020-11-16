@@ -1,0 +1,7 @@
+<div class="container">
+  <h1><%= @animal.name %></h1>
+  <h2><%= @animal.category %> - <%= @animal.price %>$</h2>
+  <p><%= @animal.description %></p>
+  <%= link_to "Back", animals_path, class: 'btn btn-primary ml-3' %>
+
+</div>

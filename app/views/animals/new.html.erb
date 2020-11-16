@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Add your animal</h1>
+  <%= simple_form_for @animal do |f|%>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :category, collection: Animal::CATEGORIES %>
+    <%= f.input :size, collection: Animal::SIZES %>
+    <%= f.input :power, collection: Animal::POWERS %>
+    <%= f.input :location %>
+    <%= f.input :price %>
+    <%= f.input :user_id %>
+    <%= f.submit class: 'btn btn-primary' %>
+    <%= link_to "Cancel", animals_path, class: 'btn btn-primary ml-3' %>
+  <% end %>
+</div>
+

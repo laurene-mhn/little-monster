@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>All animals</h1>
+  <ul>
+  <% @animals.each do |animal| %>
+    <li>
+      <%= animal.name %> - <%= animal.price %>$ <%= link_to "See details", animal_path(animal), class: "btn btn-info btn-sm m-1 " %>
+    </li>
+
+  <% end %>
+  </ul>
+  <%= link_to "Add my animal", new_animal_path, class: 'btn btn-primary btn-sm' %>
+</div>
+
