@@ -1,8 +1,8 @@
 class Animal < ApplicationRecord
   belongs_to :user
-  CATEGORIES = ["demon", "dragon", "pokemon", "doll", "goblins", "fairy", "cartoon"]
+  CATEGORIES = ["dragon", "unicorn", "sphinx", "phoenix", "griffin", "pegasus", "other"]
   SIZES = ["XS", "S", "M", "L", "XL", "Really Really Big"]
-  POWERS = ["hug", "electric", "fire", "fly"]
+  POWERS = ["hug", "electric", "fire", "fly", "heal", "teleportation", "hypnosis"]
   validates :category, inclusion: { in: CATEGORIES }
   validates :size, inclusion: { in: SIZES }
   validates :power, inclusion: { in: POWERS }
