@@ -16,7 +16,7 @@
         <li><strong>Location :</strong> <%= @animal.location %></li>
         <hr>
         <%= link_to "Back", animals_path, class: 'btn btn-primary ml-3' %>
-        <%= link_to "Update", new_animal_path, class: 'btn btn-primary ml-3' %>
+        <%= link_to "Update", edit_animal_path, class: 'btn btn-primary ml-3' %>
         <%= link_to "Delete", animal_path(@animal), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-primary ml-3' %>
       </ul>
     </div>
