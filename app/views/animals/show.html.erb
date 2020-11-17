@@ -1,11 +1,25 @@
 <div class="container">
-  <h1><%= @animal.name %></h1>
-  <h2><%= @animal.category %> - <%= @animal.price %>$</h2>
-  <p><%= @animal.description %></p>
-  <% @animal.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fit %>
-  <% end %>
-  <%= link_to "Back", animals_path, class: 'btn btn-primary ml-3' %>
-  <%= link_to "Update", new_animal_path, class: 'btn btn-primary ml-3' %>
-  <%= link_to "Delete", animal_path(@animal), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-primary ml-3' %>
+  <h2><strong><%= @animal.name.capitalize %></strong> - <%= @animal.category.downcase %></h2>
+  <hr>
+  <div class="animal-infos">
+    <div class="animal-photos">
+      <% @animal.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fit %>
+      <% end %>
+    </div>
+    <div class="animal-details">
+      <ul>
+        <li><strong>Price :</strong> <%= @animal.price %>$</li>
+        <li><strong>Description :</strong> <%= @animal.description.capitalize %></li>
+        <li><strong>Size :</strong> <%= @animal.size %></li>
+        <li><strong>Power :</strong> <%= @animal.power.capitalize %></li>
+        <li><strong>Location :</strong> <%= @animal.location %></li>
+        <hr>
+        <%= link_to "Back", animals_path, class: 'btn btn-primary ml-3' %>
+        <%= link_to "Update", new_animal_path, class: 'btn btn-primary ml-3' %>
+        <%= link_to "Delete", animal_path(@animal), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-primary ml-3' %>
+      </ul>
+    </div>
+  </div>
 </div>
+
