@@ -14,10 +14,10 @@ class AnimalPolicy < ApplicationPolicy
   end
 
   def update?
-    false
+    record.user == user
   end
 
   def destroy?
-    false
+    record.user == user
   end
 end
