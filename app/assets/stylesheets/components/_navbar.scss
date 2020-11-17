@@ -1,7 +1,7 @@
 .navbar {
   justify-content: space-between;
+  align-item: center;
   background: #070732;
-  margin-bottom: 10px;
 }
 
 
@@ -9,11 +9,19 @@
   flex-grow: 0;
 }
 
-.navbar .navbar-brand img {
+.navbar .navbar-brand>.d-flex>img {
   width: 50px;
   border-radius: 50%;
-
 }
+
+.title-nav-bar {
+  margin:0;
+  margin-left:10px;
+}
+
+.navbar .navbar-brand:hover {
+    color: $yellow;
+  }
 
 .navbar .navbar-brand {
   color: $yellow;
@@ -22,12 +30,10 @@
 
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link {
     color: $btn-gray;
+    font-weight: lighter;
 }
 
 .navbar-light .navbar-nav .show > .nav-link:hover, .navbar-light .navbar-nav .active > .nav-link:hover, .navbar-light .navbar-nav .nav-link.show:hover, .navbar-light .navbar-nav .nav-link.active:hover, .navbar-light .navbar-nav .nav-link:hover {
   color : $yellow;
 }
 
-// .nav-link, .nav-link.show, .nav-link.active {
-//     color: white;
-// }
