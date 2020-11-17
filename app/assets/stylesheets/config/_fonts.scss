@@ -1,11 +1,12 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;400;600&display=swap');
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: "Libre Franklin", "sans-serif";
+$headers-font: "Libre Franklin", "sans-serif";
 
-// In case we don't like the initial fonts 
+
+// In case we don't like the initial fonts
 // @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;500;700&display=swap');
 // font-family: 'Libre Franklin', sans-serif;
 
