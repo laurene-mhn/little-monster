@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Add your animal</h1>
+  <h1>Update your animal</h1>
   <%= simple_form_for @animal do |f|%>
     <%= f.input :name %>
     <%= f.input :description %>
@@ -10,6 +10,6 @@
     <%= f.input :price %>
     <%= f.input :user_id %>
     <%= f.submit class: 'btn btn-primary' %>
-    <%= link_to "Cancel", animals_path, class: 'btn btn-primary ml-3' %>
+    <%= link_to "Cancel", animal_path, class: 'btn btn-primary ml-3' %>
   <% end %>
 </div>

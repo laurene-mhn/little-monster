@@ -3,5 +3,6 @@
   <h2><%= @animal.category %> - <%= @animal.price %>$</h2>
   <p><%= @animal.description %></p>
   <%= link_to "Back", animals_path, class: 'btn btn-primary ml-3' %>
-
+  <%= link_to "Update", new_animal_path, class: 'btn btn-primary ml-3' %>
+  <%= link_to "Delete", animal_path(@animal), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-primary ml-3' %>
 </div>
