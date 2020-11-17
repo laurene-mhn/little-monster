@@ -9,6 +9,7 @@
     <%= f.input :location %>
     <%= f.input :price %>
     <%= f.input :user_id %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.submit class: 'btn btn-primary' %>
     <%= link_to "Cancel", animal_path, class: 'btn btn-primary ml-3' %>
   <% end %>
