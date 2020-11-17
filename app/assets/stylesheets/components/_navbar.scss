@@ -1,12 +1,32 @@
 .navbar {
   justify-content: space-between;
   background: #070732;
+  margin-bottom: 10px;
 }
+
 
 .navbar .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar .navbar-brand img {
-  width: 40px;
+  width: 50px;
+  border-radius: 50%;
+
 }
+
+.navbar .navbar-brand{
+  color: $yellow;
+}
+
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link {
+    color: $btn-gray;
+}
+
+.navbar-light .navbar-nav .show > .nav-link:hover, .navbar-light .navbar-nav .active > .nav-link:hover, .navbar-light .navbar-nav .nav-link.show:hover, .navbar-light .navbar-nav .nav-link.active:hover, .navbar-light .navbar-nav .nav-link:hover {
+  color : $yellow;
+}
+
+// .nav-link, .nav-link.show, .nav-link.active {
+//     color: white;
+// }
