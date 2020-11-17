@@ -1,0 +1,11 @@
+<%= simple_form_for @animal do |f|%>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :category, collection: Animal::CATEGORIES %>
+  <%= f.input :size, collection: Animal::SIZES %>
+  <%= f.input :power, collection: Animal::POWERS %>
+  <%= f.input :location %>
+  <%= f.input :price %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
