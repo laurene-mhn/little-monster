@@ -22,6 +22,7 @@
         <% if policy(@animal).destroy? %>
           <%= link_to "Delete", animal_path(@animal), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-primary ml-3' %>
         <% end %>
+        <%= link_to "Book now", new_animal_booking_path(@animal), class: 'btn btn-primary ml-3' %>
       </ul>
     </div>
   </div>
