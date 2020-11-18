@@ -8,7 +8,7 @@
             <% if animal.photos.attached? %>
               <%= cl_image_tag(animal.photos[0].key, crop: :fit) %>
             <% else %>
-                <%= image_tag "monster" %>
+                <%= image_tag "monster.png" %>
             <% end %>
               <div class="card-trip-infos">
                 <div>
