@@ -1,0 +1,10 @@
+<div class="container mb-3 mt-3">
+  <h1>Book your favorite creature!</h1>
+  <%= simple_form_for [@animal, @booking] do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
+  <br>
+  <%= link_to "Cancel", animals_path, class: 'btn btn-primary' %>
+</div>
