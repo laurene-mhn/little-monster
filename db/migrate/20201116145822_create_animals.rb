@@ -7,7 +7,7 @@ class CreateAnimals < ActiveRecord::Migration[6.0]
       t.string :size
       t.string :power
       t.integer :price
-      t.string :location
+      t.string :address
       t.boolean :availability
       t.references :user, null: false, foreign_key: true
 
