@@ -1,4 +1,6 @@
 class Animal < ApplicationRecord
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
   belongs_to :user
   CATEGORIES = ["dragon", "unicorn", "sphinx", "phoenix", "griffin", "pegasus", "other"]
   SIZES = ["XS", "S", "M", "L", "XL", "Really Really Big"]
@@ -8,9 +10,6 @@ class Animal < ApplicationRecord
   validates :power, presence: true
   # validates :power, inclusion: { in: POWERS }
   validates :name, presence: true, uniqueness: true
-  validates :price, :category, :location, presence: true
+  validates :price, :category, :address, presence: true
   has_many_attached :photos
 end
-
-# user1 = User.create!(email: "toto@set.fr", password: "abcdef", password_confirmation: "abcdef")
-# animal = Animal.new(name: "Spiro", price:100, user_id:1)

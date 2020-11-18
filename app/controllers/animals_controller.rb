@@ -3,6 +3,12 @@ class AnimalsController < ApplicationController
 
   def index
     @animals = policy_scope(Animal)
+    @markers = @animals.geocoded.map do |animal|
+      {
+        lat: animal.latitude,
+        lng: animal.longitude
+      }
+    end
   end
 
   def show
@@ -45,7 +51,7 @@ class AnimalsController < ApplicationController
   private
 
   def animal_params
-    params.require(:animal).permit(:name, :description, :category, :size, :power, :price, :location, :user_id, photos: [])
+    params.require(:animal).permit(:name, :description, :category, :size, :power, :price, :address, :user_id, photos: [])
   end
 
   def set_animal

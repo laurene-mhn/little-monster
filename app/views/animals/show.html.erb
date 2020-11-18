@@ -13,7 +13,7 @@
         <li><strong>Description :</strong> <%= @animal.description.capitalize %></li>
         <li><strong>Size :</strong> <%= @animal.size %></li>
         <li><strong>Power :</strong> <%= @animal.power.capitalize %></li>
-        <li><strong>Location :</strong> <%= @animal.location %></li>
+        <li><strong>Address :</strong> <%= @animal.address %></li>
         <hr>
         <%= link_to "Back", animals_path, class: 'btn btn-primary ml-3' %>
         <% if policy(@animal).edit? %>
