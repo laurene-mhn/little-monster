@@ -46,6 +46,24 @@
   width: 40px;
 }
 
+.card-trip-pricing {
+  margin-left: 3px;
+}
+
+
+.rect {
+  margin-top: 4px;
+  // padding: 2px;
+  border-radius: 6px;
+  background-color: $yellow;
+  width: fit-content;
+}
+.power-tag {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
 
 // .card-monster {
 //   overflow: hidden;
