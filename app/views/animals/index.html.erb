@@ -5,11 +5,11 @@
         <div class="col-12 col-md-6 col-lg-6 col-xl-4">
           <div class="card-trip">
             <%= link_to animal_path(animal), class: 'card-link' do %>
-            
+
             <% if animal.photos.attached? %>
               <%= cl_image_tag(animal.photos[0].key, crop: :fit) %>
             <% else %>
-                <%= image_tag "monster" %>          
+                <%= image_tag "monster" %>
             <% end %>
             <%# <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= animal.photo.attached? ? cl_image_path(animal.photo.key, crop: :fit) : image_tag "monster" %>
               <%# <img src="https://images.unsplash.com/photo-1599511872836-e71161a5d5c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80" /> %>
@@ -28,6 +28,8 @@
     <% end %>
   </div>
   <div class="btn-flat-yellow">
-  <%= link_to "Add my animal", new_animal_path, class: 'btn btn-primary btn-sm' %>
+  <% if policy(Animal).create? %>
+    <%= link_to "Add my animal", new_animal_path, class: 'btn btn-primary btn-sm' %>
+  <% end %>
   </div>
 </div>

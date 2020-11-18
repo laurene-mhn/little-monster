@@ -5,7 +5,8 @@ class Animal < ApplicationRecord
   POWERS = ["hug", "electric", "fire", "fly", "heal", "teleportation", "hypnosis"]
   validates :category, inclusion: { in: CATEGORIES }
   validates :size, inclusion: { in: SIZES }
-  validates :power, inclusion: { in: POWERS }
+  validates :power, presence: true
+  # validates :power, inclusion: { in: POWERS }
   validates :name, presence: true, uniqueness: true
   validates :price, :category, :location, presence: true
   has_many_attached :photos

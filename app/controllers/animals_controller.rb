@@ -2,11 +2,12 @@ class AnimalsController < ApplicationController
     before_action :set_animal, only: [:show, :edit, :update, :destroy]
 
   def index
-    @animals = Animal.all
+    @animals = policy_scope(Animal)
   end
 
   def show
     # @booking = Booking.new
+    authorize @animal
   end
 
   def new
@@ -16,6 +17,7 @@ class AnimalsController < ApplicationController
 
   def create
     @animal = Animal.new(animal_params)
+    authorize @animal
     @animal.user = current_user
     if @animal.save
       redirect_to animal_path(@animal), notice: "Animal was successfully created"
@@ -25,14 +27,17 @@ class AnimalsController < ApplicationController
   end
 
   def edit
+    authorize @animal
   end
 
   def update
+    authorize @animal
     @animal.update(animal_params)
     redirect_to animal_path(@animal), notice: "Animal was successfully updated"
   end
 
   def destroy
+    authorize @animal
     @animal.destroy
     redirect_to animals_path
   end
