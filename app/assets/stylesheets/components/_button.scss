@@ -12,10 +12,11 @@
 }
 
 .btn-flat-purple {
-  color: white;
+  border: 1px solid $dark-blue;
+  color: $dark-blue;
   padding: 8px 24px;
   border-radius: 10px;
-  background: #403E96;
+  background: white;
   transition: background 0.3s ease;
 }
 
@@ -24,6 +25,9 @@
   color: white;
 }
 
+.strong {
+  font-weight: bold;
+}
 // corresponding html below
 // html : <a class="btn btn-flat" href="#">Book now</a>
 // erb : <%= link_to "Book now", "#", class: "btn btn-flat" %>
