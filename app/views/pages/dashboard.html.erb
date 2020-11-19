@@ -1,11 +1,41 @@
-<div class="container wrap-container mt-3 mb-3" >
-  <h1>Your bookings</h1>
-  <div class="wrap-container"></div>
-  <div class="row">
-    <% @user.bookings.each do |booking| %>
-      <p class = "reservation-infos">Congrats ! You just booked a unique creature : <%= booking.animal.name %>from <%= booking.start_date %> to <%= booking.end_date %></p>
-      <br>
-      <%# <p class="total-price-amount"><%= booking.total_price %></p>
-    <% end %>
+<div class="container wrap-container mt-3 mb-3">
+  <h1 style="text-align: center;">Amazing monsters you booked</h1>
+  <div class="booking-card">
+    <div class="row">
+      <% @bookings.each do |booking| %>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+          <div class="booking-card-elements">
+            <div class="booking-photo">
+              <% if booking.animal.photos.attached? %>
+                <%= cl_image_tag(booking.animal.photos[0].key, radius: 7, height: 250, width: 350, crop: :fill) %>
+              <% else %>
+                <%= image_tag "monster.png" %>
+              <% end %>
+            </div>
+            <div class="booking-infos">
+              <div class="booking-info">
+                <p>Monster's name:</p>
+                <strong><%= booking.animal.name %></strong>
+              </div>
+              <div class="booking-info">
+                <p>From</p>
+                <strong><%= booking.start_date %></strong>
+              </div>
+              <div class="booking-info">
+                <p>To</p>
+                <strong><%= booking.end_date %></strong>
+              </div>
+              <div class="booking-info">  
+                <p>Owner is</p>
+                <strong>To be defined</strong>
+              </div>
+              <div class="booking-info">  
+                <p>Price: <strong><%= booking.total_price %></strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

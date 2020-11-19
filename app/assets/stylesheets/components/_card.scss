@@ -29,7 +29,6 @@
   color: $dark-blue;
 }
 
-
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
@@ -52,7 +51,6 @@
   margin-left: 3px;
 }
 
-
 .rect {
   margin-top: 4px;
   // padding: 2px;
@@ -60,6 +58,7 @@
   background-color: $yellow;
   width: fit-content;
 }
+
 .power-tag {
   padding-top: 1px;
   padding-bottom: 1px;
@@ -67,54 +66,40 @@
   padding-right: 2px;
 }
 
-// .card-monster {
-//   overflow: hidden;
-//   background: white;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-// }
+.booking-card-elements {
+  overflow: hidden;
+  background: $white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 7px;
+  color: black;
+  margin-top: 20px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  font-size: small;
+}
 
-// // .card-monster > background-image {
-// //   height: 200px;
-// //   width: 100%;
-// //   object-fit: cover;
-// // }
+.booking-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: auto;
+  margin-left: auto;
+}
 
-// .card-monster h2 {
-//   font-size: 16px;
-//   font-weight: bold;
-//   margin: 0;
-// }
+.booking-info {
+  width: 100%;
+}
 
-// .card-monster p {
-//   font-size: 12px;
-//   opacity: .7;
-//   margin: 0;
-// }
+.booking-info {
+  p {
+    margin-bottom: 0;
+  }
+}
 
-// .card-monster .card-description {
-//   padding: 16px;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: flex-end;
-//   position: relative;
-// }
-
-// .card-description .card-monster-user {
-//   position: absolute;
-//   right: 16px;
-//   top: -20px;
-//   width: 40px;
-// }
-
-// corresponding html below
-// <div class="card-monster">
-//   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-//   <div class="card-monster-infos">
-//     <div>
-//       <h2>Title here</h2>
-//       <p>Short description here!</p>
-//     </div>
-//     <h2 class="card-monster-pricing">£99.99</h2>
-//     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-monster-user avatar-bordered" />
-//   </div>
-// </div>
+.booking-card-elements {
+  .booking-photo {
+    margin-right: 10px;
+  }
+}
