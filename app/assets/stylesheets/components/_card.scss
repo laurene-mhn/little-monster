@@ -37,7 +37,7 @@
   align-items: center;
   position: relative;
   font-size: small;
-  height: 90px;
+  height: 100px;
   color: white;
 }
 
@@ -66,55 +66,3 @@
   padding-left: 2px;
   padding-right: 2px;
 }
-
-// .card-monster {
-//   overflow: hidden;
-//   background: white;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-// }
-
-// // .card-monster > background-image {
-// //   height: 200px;
-// //   width: 100%;
-// //   object-fit: cover;
-// // }
-
-// .card-monster h2 {
-//   font-size: 16px;
-//   font-weight: bold;
-//   margin: 0;
-// }
-
-// .card-monster p {
-//   font-size: 12px;
-//   opacity: .7;
-//   margin: 0;
-// }
-
-// .card-monster .card-description {
-//   padding: 16px;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: flex-end;
-//   position: relative;
-// }
-
-// .card-description .card-monster-user {
-//   position: absolute;
-//   right: 16px;
-//   top: -20px;
-//   width: 40px;
-// }
-
-// corresponding html below
-// <div class="card-monster">
-//   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-//   <div class="card-monster-infos">
-//     <div>
-//       <h2>Title here</h2>
-//       <p>Short description here!</p>
-//     </div>
-//     <h2 class="card-monster-pricing">£99.99</h2>
-//     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-monster-user avatar-bordered" />
-//   </div>
-// </div>

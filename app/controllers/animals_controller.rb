@@ -6,13 +6,14 @@ class AnimalsController < ApplicationController
     @markers = @animals.geocoded.map do |animal|
       {
         lat: animal.latitude,
-        lng: animal.longitude
+        lng: animal.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { animal: animal }),
+        image_url: helpers.asset_url('icon.png')
       }
     end
   end
 
   def show
-    # @booking = Booking.new
     authorize @animal
   end
 
