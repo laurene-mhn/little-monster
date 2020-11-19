@@ -29,7 +29,6 @@
   color: $dark-blue;
 }
 
-
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
@@ -52,7 +51,6 @@
   margin-left: 3px;
 }
 
-
 .rect {
   margin-top: 4px;
   // padding: 2px;
@@ -60,9 +58,104 @@
   background-color: $yellow;
   width: fit-content;
 }
+
 .power-tag {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 2px;
   padding-right: 2px;
+}
+
+.booking-card-elements {
+  overflow: hidden;
+  background: $white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 7px;
+  color: black;
+  margin-top: 20px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  font-size: small;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.booking-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.booking-info {
+  width: 100%;
+}
+
+.booking-info {
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.booking-card-elements {
+  .booking-photo {
+    margin-right: 10px;
+  }
 }
