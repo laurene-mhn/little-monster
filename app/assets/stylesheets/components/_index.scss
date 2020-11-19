@@ -6,3 +6,7 @@
 @import "banner";
 @import "navbar";
 @import "footer";
+
+.wrap-container {
+  min-height: calc( 100vh - 186px);
+}

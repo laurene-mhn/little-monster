@@ -1,10 +1,11 @@
-<div class="container mt-3" >
+<div class="container wrap-container mt-3 mb-3" >
   <h1>Your bookings</h1>
+  <div class="wrap-container"></div>
   <div class="row">
-    <% @user.bookings.each do |booking| %> 
+    <% @user.bookings.each do |booking| %>
       <p class = "reservation-infos">Congrats ! You just booked a unique creature : <%= booking.animal.name %>from <%= booking.start_date %> to <%= booking.end_date %></p>
       <br>
-      <%# <p class="total-price-amount"><%= booking.total_price %></p> %>
+      <%# <p class="total-price-amount"><%= booking.total_price %></p>
     <% end %>
   </div>
 </div>
