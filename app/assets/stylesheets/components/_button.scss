@@ -13,20 +13,25 @@
 
 .btn-flat-purple {
   border: 1px solid $dark-blue;
-  color: $dark-blue;
+  color: white;
   padding: 8px 24px;
   border-radius: 10px;
-  background: white;
+  background: $dark-blue;
   transition: background 0.3s ease;
 }
 
 .btn-flat-purple:hover {
-  background: #6b6a99;
-  color: white;
+  border:1px solid white;
+  text-decoration: bold;
+  color: $yellow;
 }
 
 .strong {
   font-weight: bold;
+}
+
+.link-hp:hover {
+text-decoration: none;
 }
 // corresponding html below
 // html : <a class="btn btn-flat" href="#">Book now</a>
