@@ -29,6 +29,15 @@
               </div>
               <div class="booking-info">
                 <h4><strong><%= booking.total_price.to_i %> $</strong></h4>
+              <div class="booking-info">
+                <% if booking.status == "Pending" %>
+                  <p>⏰ Pending</p>
+                <% elsif booking.status == "Accepted" %>
+                  <p>✅ Accepted</p>
+                <% else %>
+                  <p>❌ Declined</p>
+                <% end %>
+              </div>
               </div>
             </div>
           </div>

@@ -19,7 +19,7 @@
               <div class="rect">
               </div>
             </div>
-            <h2 class="card-trip-pricing"><%= booking.total_price %>$</h2>
+            <h2 class="card-trip-pricing"><%= booking.total_price.to_i %>$</h2>
             <% if booking.status == "Pending" %>
               <div class="ownerdashboard-btn">
                 <%= link_to "Accept", update_booking_path(booking, decision: "accept"), method: :patch, class: "ownerdashboard-update-btn" %>
@@ -40,7 +40,9 @@
       </div>
     <% end %>
   </div>
+  <hr>
   <p><strong>Your creatures</strong></p>
+  <hr>
     <div class="cards">
       <% @animals.each do |animal| %>
         <div>
