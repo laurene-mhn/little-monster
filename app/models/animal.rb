@@ -3,6 +3,7 @@ class Animal < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   belongs_to :user
   has_many :bookings
+  has_many_attached :photos
   CATEGORIES = ["dragon", "unicorn", "sphinx", "phoenix", "griffin", "pegasus", "other"]
   SIZES = ["XS", "S", "M", "L", "XL", "Really Really Big"]
   POWERS = ["hug", "electric", "fire", "fly", "heal", "teleportation", "hypnosis"]
@@ -12,5 +13,4 @@ class Animal < ApplicationRecord
   # validates :power, inclusion: { in: POWERS }
   validates :name, presence: true, uniqueness: true
   validates :price, :category, :address, presence: true
-  has_many_attached :photos
 end

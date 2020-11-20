@@ -22,6 +22,16 @@ class BookingsController < ApplicationController
     # redirect to dashboard once created
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    if params[:decision] == "accept"
+      @booking.update(status: "Accepted")
+    else
+      @booking.update(status: "Declined")
+    end
+    redirect_to ownerdashboard_path
+  end
+
   private
 
   def booking_params
