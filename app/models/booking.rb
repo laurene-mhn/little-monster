@@ -2,8 +2,8 @@ class Booking < ApplicationRecord
   belongs_to :animal
   belongs_to :user
 
-  validates :start_date, presence: true
-  validates :end_date, presence: true
+  validates :start_date, presence: true, if: :start_is_possible?
+  validates :end_date, presence: true, if: :booking_is_possible?
 
   def booking_is_possible?
     if start_date >= end_date
