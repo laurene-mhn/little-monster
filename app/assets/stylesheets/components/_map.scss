@@ -12,6 +12,12 @@
   padding: 10px 10px 15px;
   pointer-events: auto;
   color: $dark-blue;
+  a:hover {
+    text-decoration: none;
+  }
+  p {
+    margin-bottom: 0;
+  }
 }
 
 .index-container {
