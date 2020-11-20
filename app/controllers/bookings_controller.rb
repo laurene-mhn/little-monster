@@ -11,13 +11,14 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     # authorize @animal
     @booking.animal = @animal
-    @booking.user_id=current_user.id
-    
-    @end_date = params["booking"]["end_date(3i)"].to_i
-    @start_date = params["booking"]["start_date(3i)"].to_i
-    @total_price = (@end_date - @start_date) * @animal.price
-    @booking.save
-    redirect_to dashboard_path 
+    @booking.user_id = current_user.id
+    @total_price = (@booking.end_date - @booking.start_date).to_i * @animal.price
+    @booking.total_price = @total_price
+    if @booking.save
+      redirect_to dashboard_path
+    else
+      render "animals/show"
+    end
     # redirect to dashboard once created
   end
 
