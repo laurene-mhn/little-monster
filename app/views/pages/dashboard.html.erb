@@ -1,6 +1,9 @@
 <div class="container wrap-container mt-3 mb-3">
-  <h1 style="text-align: center;">Amazing monsters you booked</h1>
-  <div class="booking-card">
+  <h3><strong>My bookings</strong></h3>
+  <hr>
+  <%= link_to "< Back", animals_path, class: 'btn' %>
+  <hr>
+  <div class="booking-card mb-5">
     <div class="row">
       <% @bookings.each do |booking| %>
         <div class="col-12 col-sm-12 col-md-12 col-lg-6">
@@ -14,8 +17,7 @@
             </div>
             <div class="booking-infos">
               <div class="booking-info">
-                <p>Monster's name:</p>
-                <strong><%= booking.animal.name %></strong>
+                <h3><strong><%= booking.animal.name.capitalize %></strong></h3>
               </div>
               <div class="booking-info">
                 <p>From</p>
@@ -25,12 +27,8 @@
                 <p>To</p>
                 <strong><%= booking.end_date %></strong>
               </div>
-              <div class="booking-info">  
-                <p>Owner is</p>
-                <strong>To be defined</strong>
-              </div>
-              <div class="booking-info">  
-                <p>Price: <strong><%= booking.total_price %></strong></p>
+              <div class="booking-info">
+                <h4><strong><%= booking.total_price.to_i %> $</strong></h4>
               </div>
             </div>
           </div>

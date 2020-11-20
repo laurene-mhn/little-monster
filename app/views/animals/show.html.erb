@@ -1,5 +1,5 @@
 <div class="container wrap-container mt-4 mb-4">
-  <h3><strong><%= @animal.name.capitalize %></strong> - <%= @animal.category.capitalize %> category</h3>
+  <h3><strong><%= @animal.name.capitalize %></strong> - <small><%= @animal.category.capitalize %></small></h3>
   <hr>
   <%= link_to "< Back", animals_path, class: 'btn' %>
   <% if policy(@animal).edit? %>|
@@ -10,7 +10,6 @@
     <% end %>
   <hr>
   <div class="animal-infos">
-
     <div class="animal-photos">
       <% @animal.photos.each do |photo| %>
         <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill, gravity: :auto, radius: 1 %>
@@ -18,21 +17,28 @@
     </div>
     <div class="card ml-3">
       <div class="card-body">
+        <h4 class="card-title" style="text-align: center"><strong><%= @animal.price %> $</strong> </h4>
+        <hr>
+        <p class="card-text"><strong>✍🏼Description :</strong> <%= @animal.description.capitalize %></p>
 
-      <h4 class="card-title" style="text-align: center"><strong><%= @animal.price %> $</strong> </h4>
-      <hr>
-      <p class="card-text"><strong>✍🏼Description :</strong> <%= @animal.description.capitalize %></p>
-
-      <p class="card-text"><strong>💪🏼Power :</strong> <%= @animal.power.capitalize %></p>
-      <hr>
-      <p class="card-text" style="text-align: center"><small class="text-muted">Address :</strong> <%= @animal.address %></small></p>
-
+        <p class="card-text"><strong>💪🏼Power :</strong> <%= @animal.power.capitalize %></p>
+        <hr>
+        <p class="card-text" style="text-align: center"><small class="text-muted">Address :</strong> <%= @animal.address %></small></p>
+      </div>
+    </div>
+    <div class="card ml-3"></div>
+      <div class="card-body">
+        <h4 class="card-title" style="text-align: center"><strong>Book now !</strong> </h4>
+        <div class="form-wrapper text-center" style="width: 400px; margin: 0 auto;">
+          <%= simple_form_for [@animal, @booking] do |f| %>
+              <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+              <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+              <%= f.button :submit, "Go", class: "btn btn-flat-yellow" %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
-      <div class="booking">
-        <%= link_to "Book now", new_animal_booking_path(@animal), class: 'btn btn-flat-yellow' %>
-      </div>
 
-  </div>
 </div>
 

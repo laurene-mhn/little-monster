@@ -5,20 +5,33 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
 
 Booking.destroy_all
 Animal.destroy_all
 User.destroy_all
 
+user = User.new(email: 'gregoire@monster.fr', password: '123456', password_confirmation: '123456')
+      file = URI.open('https://avatars0.githubusercontent.com/u/17796594?s=400&u=f6de9d96550d08d6272ed71df20e485f45bcfa83&v=4.png')
+      user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+      user.save
+      
+user1 = User.new(email: 'laurene@monster.fr', password: '123456', password_confirmation: '123456')
+      file = URI.open('https://avatars0.githubusercontent.com/u/70512756?v=4.png')
+      user1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+      user1.save
 
-user = User.create!(email: 'gregoire@monster.fr', password: '123456', password_confirmation: '123456')
-user1 = User.create!(email: 'laurene@monster.fr', password: '123456', password_confirmation: '123456')
-user2 = User.create!(email: 'marion@monster.fr', password: '123456', password_confirmation: '123456')
-user3 = User.create!(email: 'antony@monster.fr', password: '123456', password_confirmation: '123456')
-user4 = User.create!(email: 'jonathan@monster.fr', password: '123456', password_confirmation: '123456')
-user5 = User.create!(email: 'germain@monster.fr', password: '123456', password_confirmation: '123456')
+user2 = User.new(email: 'marion@monster.fr', password: '123456', password_confirmation: '123456')
+      file = URI.open('https://avatars3.githubusercontent.com/u/71773113?s=400&u=181dfa92826d6984124888a22f85f1be2d04aa8f&v=4.png')
+      user2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+      user2.save
 
-USERS = [user, user1, user2, user3, user4, user5]
+user3 = User.new(email: 'antony@monster.fr', password: '123456', password_confirmation: '123456')
+      file = URI.open('https://avatars0.githubusercontent.com/u/70489849?s=400&u=9c4d21f36597bcf4f647b4aa276afab4d39cf8c2&v=4.png')
+      user3.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+      user3.save
+
+USERS = [user, user1, user2, user3]
 # CATEGORIES = ["dragon", "unicorn", "sphinx", "phoenix", "griffin", "pegasus", "other"]
 # SIZES = ["XS", "S", "M", "L", "XL", "Really Really Big"]
 POWERS = ["hug", "electric", "fire", "fly", "heal", "teleportation", "hypnosis"]

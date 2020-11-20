@@ -2,7 +2,9 @@
   <div class="row">
     <div class="col-md-8">
       <div class="cards-container mt-4">
-        <h1 style="text-align: center;">Discover Creatures</h1>
+        <div class="container ml-3">
+        <h3><strong>Discover creatures</strong></h3>
+        </div>
         <div class="cards">
           <% @animals.each do |animal| %>
             <div>
@@ -22,7 +24,8 @@
                       </div>
                     </div>
                     <h2 class="card-trip-pricing"><%= animal.price %>$</h2>
-                    <img src="https://gal.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fgal.2Fvar.2Fgal.2Fstorage.2Fimages.2Fmedia.2Fmultiupload_du_11_aout_2015.2Fpere-fouras.2F3406824-1-fre-FR.2Fpere-fouras.2Ejpg/480x480/quality/80/yann-le-gac-les-droles-de-vie-du-pere-fouras.jpg" class="card-trip-user avatar-bordered" />
+                    <%= cl_image_tag animal.user.photo.key, class: "card-trip-user avatar-bordered" if animal.user.photo.present? %>
+                    <%# <img src="https://gal.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fgal.2Fvar.2Fgal.2Fstorage.2Fimages.2Fmedia.2Fmultiupload_du_11_aout_2015.2Fpere-fouras.2F3406824-1-fre-FR.2Fpere-fouras.2Ejpg/480x480/quality/80/yann-le-gac-les-droles-de-vie-du-pere-fouras.jpg" class="card-trip-user avatar-bordered" /> %>
                   </div>
                 <% end %>
               </div>
