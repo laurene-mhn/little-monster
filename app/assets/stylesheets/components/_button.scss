@@ -37,3 +37,51 @@ text-decoration: none;
 // html : <a class="btn btn-flat" href="#">Book now</a>
 // erb : <%= link_to "Book now", "#", class: "btn btn-flat" %>
 
+.ownerdashboard-btn {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  align-items: center;
+  height: 100%;
+
+  a {
+    margin: 0 1rem;
+    padding: 2px 8px;
+    color: white;
+    font-weight: bold;
+
+  }
+}
+
+.ownerdashboard-update-btn {
+  background-color: $yellow;
+  border-radius: 7px;
+  font-size: medium;
+  padding: 2px;
+  // margin-left: auto;
+}
+
+.ownerdashboard-delete-btn {
+  background-color: rgba(255, 0, 0, 0.637);
+  border-radius: 7px;
+  font-size: medium;
+  padding: 2px;
+  // margin-right: 4px;
+}
+
+.ownerdashboard-delete-btn:hover {
+  color: $yellow;
+  text-decoration: none;
+}
+
+.ownerdashboard-update-btn:hover {
+  text-decoration: none;
+}
+// .ownerdashboard-owner-btn {
+//   display: flex;
+//   align-items: center;
+// }
+
+// .dashboard-owner-btn {
+//   bac
+// }

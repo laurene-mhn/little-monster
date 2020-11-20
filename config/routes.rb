@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   end
 
   get 'dashboard', to: 'pages#dashboard'
+  get 'ownerdashboard', to: 'pages#ownerdashboard'
+  patch 'bookings/:id', to: 'bookings#update', as: 'update_booking'
 end

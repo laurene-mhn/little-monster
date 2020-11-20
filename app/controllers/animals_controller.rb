@@ -46,7 +46,7 @@ class AnimalsController < ApplicationController
   def destroy
     authorize @animal
     @animal.destroy
-    redirect_to animals_path
+    redirect_to ownerdashboard_path
   end
 
   private

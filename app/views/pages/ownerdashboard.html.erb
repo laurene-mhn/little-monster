@@ -1,0 +1,75 @@
+<div class="container wrap-container mt-3 mb-3">
+  <h3><strong>Owner dashboard</strong></h3>
+  <hr>
+  <p><strong>Your requests</strong></p>
+  <hr>
+  <div class="cards">
+    <% @owner_bookings.each do |booking| %>
+      
+      <div class="card-trip">
+        <div class='card-link'>
+          <% if booking.animal.photos.attached? %>
+            <%= cl_image_tag(booking.animal.photos[0].key, crop: :fit) %>
+          <% else %>
+            <%= image_tag "monster.png" %>
+          <% end %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= booking.animal.name %></h2>
+              <div class="rect">
+              </div>
+            </div>
+            <h2 class="card-trip-pricing"><%= booking.total_price %>$</h2>
+            <% if booking.status == "Pending" %>
+              <div class="ownerdashboard-btn">
+                <%= link_to "Accept", update_booking_path(booking, decision: "accept"), method: :patch, class: "ownerdashboard-update-btn" %>
+                <%= link_to "Decline", update_booking_path(booking, decision: "decline"), method: :patch, class: "ownerdashboard-delete-btn" %>
+              </div>
+            <% elsif booking.status == "Accepted" %>
+              <div class="ownerdashboard-btn">
+                <p class="ownerdashboard-update-btn">Accepted</p>
+              </div>
+              <% else %>
+                <div class="ownerdashboard-btn">
+                  <p class="ownerdashboard-delete-btn">Declined</p>
+                </div>
+            <% end %>
+          </div>
+        </div>
+        
+      </div>
+    <% end %>
+  </div>
+  <p><strong>Your creatures</strong></p>
+    <div class="cards">
+      <% @animals.each do |animal| %>
+        <div>
+          <div class="card-owner">
+              <% if animal.photos.attached? %>
+                <%= cl_image_tag(animal.photos[0].key, crop: :fit) %>
+              <% else %>
+                  <%= image_tag "monster.png", height: 250, width: 250 %>
+              <% end %>
+              <div class="card-owner-infos">
+                <div class="card-owner-info">
+                  <p>Name:</p>
+                  <p class="card-owner-name"><strong><%= animal.name %></strong></p>
+                </div>
+                <div class="card-owner-info">
+                  <p>Price:</p>
+                  <p class="card-owner-pricing"><strong><%= animal.price %>$</strong></p>
+                </div>
+                <div class="ownerdashboard-btn">
+                  <a data-confirm="Are you sure?" class="ownerdashboard-delete-btn" rel="nofollow" data-method="delete" href="/animals/22">Delete</a>
+                  <a class="ownerdashboard-update-btn" href="/animals/22/edit">Update</a>
+              </div>
+              </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <%# <div>
+  <p><strong>Booking historic</strong></p>
+  <hr>
+  </div>   %>
+</div>
