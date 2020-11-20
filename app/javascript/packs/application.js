@@ -31,10 +31,11 @@ import { initSelect2 } from '../components/init_select2';
 
 import { initMapbox } from '../components/init_mapbox';
 
+import { initAutocomplete } from '../components/init_autocomplete';
+
 document.addEventListener("turbolinks:load", function() {
   initSelect2();
   initMapbox();
   flatpickr(".datepicker", {});
+  initAutocomplete();
 });
-
-
